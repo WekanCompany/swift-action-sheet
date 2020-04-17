@@ -6,15 +6,16 @@ We are using the popular library [SwiftEntryKit](https://github.com/huri000/Swif
 
 ## How to get it work ##
 
-### Install pod
+#### 1. Install pod
 ````
 pod 'SwiftEntryKit', '1.2.3'
 ````
 
-````ViewController```` class has examples on how to configure action sheets, toasts and alert boxes.
+#### 2. Drag the ````Utils```` folder to your app.
 
+#### 3. ````ViewController```` class has examples on how to configure few action sheets, toasts and alert boxes.
 
-### Show a custom View in action sheet
+## Show a custom View in action sheet
 
 #### In your CustomView.swift
 ````
@@ -32,13 +33,15 @@ pod 'SwiftEntryKit', '1.2.3'
         fromNib()
         clipsToBounds = true
         layer.cornerRadius = 5
+        
+        // Do any setups for this class here..
      }
  ````
  
  #### On the ViewController.swift
  
  ````
-     func showCustomListView() {
+     func showCustomListViewAsSheet() {
         
         // Create a sheet that appears from bottom
         var attributes = EKAttributes.bottomFloat
