@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		085AD5872449627500B830B1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085AD5862449627500B830B1 /* ListViewController.swift */; };
+		085AD58B2449675000B830B1 /* NibExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085AD5892449675000B830B1 /* NibExampleView.swift */; };
+		085AD58C2449675000B830B1 /* NibExampleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085AD58A2449675000B830B1 /* NibExampleView.xib */; };
+		085AD59324496B8200B830B1 /* ModelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085AD59124496B8200B830B1 /* ModelTableViewCell.swift */; };
+		085AD59424496B8200B830B1 /* ModelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085AD59224496B8200B830B1 /* ModelTableViewCell.xib */; };
 		0874824D243D9B6B00EE452E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874824C243D9B6B00EE452E /* AppDelegate.swift */; };
 		08748251243D9B6B00EE452E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08748250243D9B6B00EE452E /* ViewController.swift */; };
 		08748254243D9B6B00EE452E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08748252243D9B6B00EE452E /* Main.storyboard */; };
@@ -29,6 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		085AD5862449627500B830B1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		085AD5892449675000B830B1 /* NibExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibExampleView.swift; sourceTree = "<group>"; };
+		085AD58A2449675000B830B1 /* NibExampleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NibExampleView.xib; sourceTree = "<group>"; };
+		085AD59124496B8200B830B1 /* ModelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTableViewCell.swift; sourceTree = "<group>"; };
+		085AD59224496B8200B830B1 /* ModelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModelTableViewCell.xib; sourceTree = "<group>"; };
 		08748249243D9B6B00EE452E /* WekanActionSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WekanActionSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0874824C243D9B6B00EE452E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08748250243D9B6B00EE452E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +76,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		085AD59524496CB600B830B1 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				085AD5892449675000B830B1 /* NibExampleView.swift */,
+				085AD58A2449675000B830B1 /* NibExampleView.xib */,
+				085AD59124496B8200B830B1 /* ModelTableViewCell.swift */,
+				085AD59224496B8200B830B1 /* ModelTableViewCell.xib */,
+			);
+			name = "Custom View";
+			sourceTree = "<group>";
+		};
+		085AD59624496CE000B830B1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				085AD5862449627500B830B1 /* ListViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
 		08748240243D9B6A00EE452E = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +119,8 @@
 				087F3DBA2445ECE70014D6ED /* Common */,
 				0874824C243D9B6B00EE452E /* AppDelegate.swift */,
 				08748250243D9B6B00EE452E /* ViewController.swift */,
+				085AD59524496CB600B830B1 /* Custom View */,
+				085AD59624496CE000B830B1 /* View Controller */,
 				08748255243D9B6C00EE452E /* Assets.xcassets */,
 				08748252243D9B6B00EE452E /* Main.storyboard */,
 				08748257243D9B6C00EE452E /* LaunchScreen.storyboard */,
@@ -230,6 +261,8 @@
 				08748259243D9B6C00EE452E /* LaunchScreen.storyboard in Resources */,
 				08748256243D9B6C00EE452E /* Assets.xcassets in Resources */,
 				08748254243D9B6B00EE452E /* Main.storyboard in Resources */,
+				085AD59424496B8200B830B1 /* ModelTableViewCell.xib in Resources */,
+				085AD58C2449675000B830B1 /* NibExampleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +323,15 @@
 				087F3DEA2445F38A0014D6ED /* Object+ClassName.swift in Sources */,
 				087F3DE72445F38A0014D6ED /* UIColor+Utils.swift in Sources */,
 				087F3DDD2445ECE70014D6ED /* Router.swift in Sources */,
+				085AD58B2449675000B830B1 /* NibExampleView.swift in Sources */,
 				087F3DEB2445F38A0014D6ED /* Font.swift in Sources */,
 				08748251243D9B6B00EE452E /* ViewController.swift in Sources */,
 				087F3DE92445F38A0014D6ED /* UIScreen+Utils.swift in Sources */,
 				0874824D243D9B6B00EE452E /* AppDelegate.swift in Sources */,
 				087F3DD52445ECE70014D6ED /* ViewExtension.swift in Sources */,
 				087F3DD12445ECE70014D6ED /* Constants.swift in Sources */,
+				085AD59324496B8200B830B1 /* ModelTableViewCell.swift in Sources */,
+				085AD5872449627500B830B1 /* ListViewController.swift in Sources */,
 				087F3DEC2445F38A0014D6ED /* UIView+Nib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,6 +28,13 @@ class ViewController: UIViewController {
     @IBAction func showAlertAction(sender: Any) {
         showAlertView()
     }
+   
+    @IBAction func showCustomViewAction(sender: Any) {
+           showCustomListView()
+       }
+    @IBAction func showVCAction(sender: Any) {
+           showViewControllerInSheet()
+       }
     
     func showNotificationView() {
         // Generate top floating entry and set some properties
@@ -104,6 +111,44 @@ class ViewController: UIViewController {
         
         let customView = EKAlertMessageView(with: alertMsg)
         SwiftEntryKit.display(entry: customView, using: attributes)
+    }
+    
+    func showCustomListView() {
+        
+        // Create a basic toast that appears at the top
+        var attributes = EKAttributes.bottomFloat
+        attributes.displayDuration = .infinity
+        attributes.screenInteraction = .absorbTouches
+        attributes.entryInteraction = .forward
+
+        // Set its background to white
+        attributes.entryBackground = .color(color: .white)
+
+        // Animate in and out using default translation
+        attributes.entranceAnimation = .translation
+        attributes.exitAnimation = .translation
+
+        SwiftEntryKit.display(entry: NibExampleView(), using: attributes)
+
+    }
+    
+    func showViewControllerInSheet() {
+        // Create a basic toast that appears at the top
+        var attributes = EKAttributes.bottomFloat
+        attributes.displayDuration = .infinity
+        attributes.screenInteraction = .absorbTouches
+        attributes.entryInteraction = .forward
+
+        // Set its background to white
+        attributes.entryBackground = .color(color: .white)
+
+        // Animate in and out using default translation
+        attributes.entranceAnimation = .translation
+        attributes.exitAnimation = .translation
+        
+        let viewController = ListViewController(with: NibExampleView())
+        SwiftEntryKit.display(entry: viewController, using: attributes)
+        
     }
 }
 
