@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        showCustomActionsheet()
     }
     
     @IBAction func showBottomSheetAction(sender: Any) {
@@ -51,7 +50,6 @@ class ViewController: UIViewController {
         let image = EKProperty.ImageContent(image: UIImage(named: "profile")!, size: CGSize(width: 35, height: 35))
         let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
         let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
-        
 
         let contentView = EKNotificationMessageView(with: notificationMessage)
     
@@ -59,12 +57,9 @@ class ViewController: UIViewController {
     }
 
     func showCustomActionsheet() {
-        // Create a basic toast that appears at the top
         var attributes = EKAttributes.bottomToast
-
         // Set its background to white
         attributes.entryBackground = .color(color: .white)
-
         // Animate in and out using default translation
         attributes.entranceAnimation = .translation
         attributes.exitAnimation = .translation
@@ -81,9 +76,6 @@ class ViewController: UIViewController {
         }
         let customView = EKPopUpMessageView(with: popupmsg)
         customView.backgroundColor = .darkGray
-        /*
-        ... Customize the view as you like ...
-        */
 
         // Display the view with the configuration
         SwiftEntryKit.display(entry: customView, using: attributes)
@@ -91,8 +83,6 @@ class ViewController: UIViewController {
     
     func showAlertView() {
         var attributes = EKAttributes.centerFloat
-
-        // Set its background to white
         attributes.entryBackground = .color(color: .white)
 
         // Animate in and out using default translation
@@ -114,41 +104,30 @@ class ViewController: UIViewController {
     }
     
     func showCustomListView() {
-        
-        // Create a basic toast that appears at the top
         var attributes = EKAttributes.bottomFloat
         attributes.displayDuration = .infinity
         attributes.screenInteraction = .absorbTouches
         attributes.entryInteraction = .forward
-
-        // Set its background to white
         attributes.entryBackground = .color(color: .white)
-
         // Animate in and out using default translation
         attributes.entranceAnimation = .translation
         attributes.exitAnimation = .translation
 
         SwiftEntryKit.display(entry: NibExampleView(), using: attributes)
-
     }
     
     func showViewControllerInSheet() {
-        // Create a basic toast that appears at the top
         var attributes = EKAttributes.bottomFloat
         attributes.displayDuration = .infinity
         attributes.screenInteraction = .absorbTouches
         attributes.entryInteraction = .forward
-
-        // Set its background to white
         attributes.entryBackground = .color(color: .white)
-
         // Animate in and out using default translation
         attributes.entranceAnimation = .translation
         attributes.exitAnimation = .translation
         
         let viewController = ListViewController(with: NibExampleView())
         SwiftEntryKit.display(entry: viewController, using: attributes)
-        
     }
 }
 

@@ -11,8 +11,6 @@ import UIKit
 class ModelTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblModelName:            UILabel!
-    @IBOutlet weak var btnselect:               UIImageView!
-    @IBOutlet weak var baseView:                UIView!
 
     // MARK: - Awake from nib
     

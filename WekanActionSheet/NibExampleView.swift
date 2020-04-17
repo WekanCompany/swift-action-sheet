@@ -26,15 +26,15 @@ class NibExampleView: UIView {
         fromNib()
         clipsToBounds = true
         layer.cornerRadius = 5
+        
+        // Do any setups that you require for this class
         listTableView.register(UINib(nibName: "ModelTableViewCell", bundle: nil), forCellReuseIdentifier: "ModelTableViewCell")
         listTableView.reloadData()
     }
     
     @IBAction func closeAction(sender: Any) {
-               SwiftEntryKit.dismiss()
-
-           }
-
+        SwiftEntryKit.dismiss()
+    }
 }
 
 extension NibExampleView: UITableViewDelegate, UITableViewDataSource {
