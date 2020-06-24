@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     func showNotificationView() {
         // Generate top floating entry and set some properties
         var attributes = EKAttributes.topFloat
-        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.red), EKColor(.green)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
+        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.systemRed), EKColor(.white)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
         attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
         attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
         attributes.statusBar = .dark
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
             self.showNotificationView()
         }
         let customView = EKPopUpMessageView(with: popupmsg)
-        customView.backgroundColor = .darkGray
+        customView.backgroundColor = .lightGray
 
         // Display the view with the configuration
         SwiftEntryKit.display(entry: customView, using: attributes)
