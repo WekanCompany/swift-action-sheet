@@ -87,14 +87,6 @@
 			name = "Custom View";
 			sourceTree = "<group>";
 		};
-		085AD59624496CE000B830B1 /* View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				085AD5862449627500B830B1 /* ListViewController.swift */,
-			);
-			name = "View Controller";
-			sourceTree = "<group>";
-		};
 		08748240243D9B6A00EE452E = {
 			isa = PBXGroup;
 			children = (
@@ -119,8 +111,8 @@
 				087F3DBA2445ECE70014D6ED /* Common */,
 				0874824C243D9B6B00EE452E /* AppDelegate.swift */,
 				08748250243D9B6B00EE452E /* ViewController.swift */,
+				085AD5862449627500B830B1 /* ListViewController.swift */,
 				085AD59524496CB600B830B1 /* Custom View */,
-				085AD59624496CE000B830B1 /* View Controller */,
 				08748255243D9B6C00EE452E /* Assets.xcassets */,
 				08748252243D9B6B00EE452E /* Main.storyboard */,
 				08748257243D9B6C00EE452E /* LaunchScreen.storyboard */,

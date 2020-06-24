@@ -1,16 +1,16 @@
 //
-//  MyBookingTableViewCell.swift
-//  RideKleen
+//  ModelTableViewCell.swift
+//  WekanActionSheet
 //
-//  Created by Santhosh on 26/02/19.
-//  Copyright © 2019 Santhosh. All rights reserved.
+//  Created by Brian on 08/04/20.
+//  Copyright © 2020 Wekan. All rights reserved.
 //
 
 import UIKit
 
 class ModelTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblModelName:            UILabel!
+    @IBOutlet weak var lblModelName: UILabel!
 
     // MARK: - Awake from nib
     

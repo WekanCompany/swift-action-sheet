@@ -1,9 +1,9 @@
 //
 //  NibExampleView.swift
-//  SwiftEntryKit_Example
+//  WekanActionSheet
 //
-//  Created by Daniel Huri on 4/25/18.
-//  Copyright (c) 2018 huri000@gmail.com. All rights reserved.
+//  Created by Brian on 08/04/20.
+//  Copyright © 2020 Wekan. All rights reserved.
 //
 
 import UIKit
@@ -50,6 +50,10 @@ extension NibExampleView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        
+        
+        SwiftEntryKit.dismiss()
+
     }
 }
 

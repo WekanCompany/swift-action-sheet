@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     func showCustomListView() {
         var attributes = EKAttributes.bottomFloat
         attributes.displayDuration = .infinity
-        attributes.screenInteraction = .absorbTouches
+        attributes.screenInteraction = .dismiss
         attributes.entryInteraction = .forward
         attributes.entryBackground = .color(color: .white)
         // Animate in and out using default translation
