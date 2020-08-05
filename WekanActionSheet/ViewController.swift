@@ -24,6 +24,10 @@ class ViewController: UIViewController {
         showNotificationView()
     }
     
+    @IBAction func showNotificationWithGradientAction(sender: Any) {
+        showNotificationViewWithGradient()
+    }
+    
     @IBAction func showAlertAction(sender: Any) {
         showAlertView()
     }
@@ -35,27 +39,6 @@ class ViewController: UIViewController {
            showViewControllerInSheet()
        }
     
-    func showNotificationView() {
-        // Generate top floating entry and set some properties
-        var attributes = EKAttributes.topFloat
-        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.systemRed), EKColor(.white)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
-        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
-        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
-        attributes.statusBar = .dark
-        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
-        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.minEdge), height: .intrinsic)
-
-        let title = EKProperty.LabelContent(text: "Login Successful", style: .init(font: .boldSystemFont(ofSize: 16), color: EKColor.black))
-        let description = EKProperty.LabelContent(text: "Go and checkout the features we offer you", style: .init(font: .systemFont(ofSize: 14), color: EKColor.chatMessage))
-        let image = EKProperty.ImageContent(image: UIImage(named: "profile")!, size: CGSize(width: 35, height: 35))
-        let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
-        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
-
-        let contentView = EKNotificationMessageView(with: notificationMessage)
-    
-        SwiftEntryKit.display(entry: contentView, using: attributes)
-    }
-
     func showCustomActionsheet() {
         var attributes = EKAttributes.bottomToast
         // Set its background to white
@@ -63,24 +46,86 @@ class ViewController: UIViewController {
         // Animate in and out using default translation
         attributes.entranceAnimation = .translation
         attributes.exitAnimation = .translation
+        attributes.displayDuration = .infinity
+        attributes.positionConstraints.safeArea = .overridden
 
-        let title = EKProperty.LabelContent(text: "Login Successful", style: .init(font: .boldSystemFont(ofSize: 16), color: EKColor.headerText))
-        let description = EKProperty.LabelContent(text: "Go and checkout the features we offer you", style: .init(font: .systemFont(ofSize: 14), color: EKColor.subText))
-        let image = EKProperty.ImageContent(image: UIImage(named: "profile")!, size: CGSize(width: 35, height: 35))
-        let themeImg = EKPopUpMessage.ThemeImage(image: image, position: EKPopUpMessage.ThemeImage.Position.topToTop(offset: 20))
-        let buttonLabel = EKProperty.LabelContent(text: "OK", style: EKProperty.LabelStyle(font: .boldSystemFont(ofSize: 14), color: EKColor.standardContent))
-        let buttonContent = EKProperty.ButtonContent(label: buttonLabel, backgroundColor: EKColor.standardBackground, highlightedBackgroundColor: EKColor.init(.blue))
-        let popupmsg = EKPopUpMessage(themeImage: themeImg, title: title, description: description, button: buttonContent) {
+        let title = EKProperty.LabelContent(text: "Login Successful!",
+                                            style: .init(font: .boldSystemFont(ofSize: 16), color: EKColor.headerText))
+        let description = EKProperty.LabelContent(text: "Go and checkout the features we offer you",
+                                                  style: .init(font: .systemFont(ofSize: 14), color: EKColor.headerText))
+        let image = EKProperty.ImageContent(image: UIImage(named: "protected")!,
+                                            size: CGSize(width: 35, height: 35))
+        let themeImg = EKPopUpMessage.ThemeImage(image: image,
+                                                 position: EKPopUpMessage.ThemeImage.Position.topToTop(offset: 20))
+        let buttonLabel = EKProperty.LabelContent(text: "OK",
+                                                  style: EKProperty.LabelStyle(font: .boldSystemFont(ofSize: 14), color: EKColor.standardContent))
+        let buttonContent = EKProperty.ButtonContent(label: buttonLabel,
+                                                     backgroundColor: EKColor.standardBackground,
+                                                     highlightedBackgroundColor: EKColor.init(.blue))
+        let popupmsg = EKPopUpMessage(themeImage: themeImg,
+                                      title: title,
+                                      description: description,
+                                      button: buttonContent) {
             print("OK tapped")
             self.showNotificationView()
         }
         let customView = EKPopUpMessageView(with: popupmsg)
-        customView.backgroundColor = .lightGray
+        customView.backgroundColor = .black
 
         // Display the view with the configuration
         SwiftEntryKit.display(entry: customView, using: attributes)
     }
     
+    func showNotificationView() {
+        // Generate top floating entry and set some properties
+        var attributes = EKAttributes.topFloat
+        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.white), EKColor(.white)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
+        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.minEdge), height: .intrinsic)
+
+        let title = EKProperty.LabelContent(text: "",
+                                            style: .init(font: .boldSystemFont(ofSize: 16), color: EKColor.black))
+        let description = EKProperty.LabelContent(text: "Profile updated successfully!",
+                                                  style: .init(font: .boldSystemFont(ofSize: 14), color: EKColor.chatMessage))
+        let image = EKProperty.ImageContent(image: UIImage(named: "protected")!,
+                                            size: CGSize(width: 35, height: 35))
+        let simpleMessage = EKSimpleMessage(image: image,
+                                            title: title,
+                                            description: description)
+        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
+        let contentView = EKNotificationMessageView(with: notificationMessage)
+
+        SwiftEntryKit.display(entry: contentView, using: attributes)
+    }
+
+    func showNotificationViewWithGradient() {
+        // Generate top floating entry and set some properties
+        var attributes = EKAttributes.topFloat
+        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.systemYellow), EKColor(.white)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
+        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.minEdge), height: .intrinsic)
+
+        let title = EKProperty.LabelContent(text: "",
+                                            style: .init(font: .boldSystemFont(ofSize: 16), color: EKColor.black))
+        let description = EKProperty.LabelContent(text: "Profile updated successfully!",
+                                                  style: .init(font: .boldSystemFont(ofSize: 14), color: EKColor.chatMessage))
+        let image = EKProperty.ImageContent(image: UIImage(named: "protected")!,
+                                            size: CGSize(width: 35, height: 35))
+        let simpleMessage = EKSimpleMessage(image: image,
+                                            title: title,
+                                            description: description)
+        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
+        let contentView = EKNotificationMessageView(with: notificationMessage)
+
+        SwiftEntryKit.display(entry: contentView, using: attributes)
+    }
+
     func showAlertView() {
         var attributes = EKAttributes.centerFloat
         attributes.entryBackground = .color(color: .white)
@@ -90,7 +135,7 @@ class ViewController: UIViewController {
         attributes.exitAnimation = .translation
 
         
-        let title = EKProperty.LabelContent(text: "Login Successful", style: .init(font: .boldSystemFont(ofSize: 16), color: EKColor.headerText))
+        let title = EKProperty.LabelContent(text: "Login Successful", style: .init(font: .boldSystemFont(ofSize: 16), color: EKColor.subText))
         let description = EKProperty.LabelContent(text: "Go and checkout the features we offer you", style: .init(font: .systemFont(ofSize: 14), color: EKColor.subText))
         let image = EKProperty.ImageContent(image: UIImage(named: "profile")!, size: CGSize(width: 35, height: 35))
         let simpleMsg = EKSimpleMessage(image: image, title: title, description: description)
@@ -113,7 +158,7 @@ class ViewController: UIViewController {
         attributes.entranceAnimation = .translation
         attributes.exitAnimation = .translation
 
-        SwiftEntryKit.display(entry: NibExampleView(), using: attributes)
+        SwiftEntryKit.display(entry: CustomListView(), using: attributes)
     }
     
     func showViewControllerInSheet() {
@@ -126,7 +171,7 @@ class ViewController: UIViewController {
         attributes.entranceAnimation = .translation
         attributes.exitAnimation = .translation
         
-        let viewController = ListViewController(with: NibExampleView())
+        let viewController = ListViewController(with: CustomListView())
         SwiftEntryKit.display(entry: viewController, using: attributes)
     }
 }

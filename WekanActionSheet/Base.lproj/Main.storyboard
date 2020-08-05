@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lvs-5m-YeZ">
-                                <rect key="frame" x="127" y="308" width="160" height="280"/>
+                                <rect key="frame" x="127" y="278" width="160" height="340"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki7-6w-0EF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki7-6w-0EF">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Jrb-Gc-pLX"/>
@@ -30,19 +30,30 @@
                                             <action selector="showBottomSheetActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0I-ji-mji"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFT-Ls-13r">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFT-Ls-13r">
                                         <rect key="frame" x="0.0" y="60" width="160" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="BgC-q1-vaF"/>
                                             <constraint firstAttribute="width" constant="160" id="LzQ-db-p8x"/>
                                         </constraints>
-                                        <state key="normal" title="Notification Toast"/>
+                                        <state key="normal" title="Toast"/>
                                         <connections>
                                             <action selector="showNotificationActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jaB-Pa-7NC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQd-ZO-Jmw">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88O-EG-XYB">
                                         <rect key="frame" x="0.0" y="120" width="160" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8NL-xf-n2T"/>
+                                            <constraint firstAttribute="width" constant="160" id="mOm-r9-0Tl"/>
+                                        </constraints>
+                                        <state key="normal" title="Gradient Toast"/>
+                                        <connections>
+                                            <action selector="showNotificationWithGradientActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRD-Kg-pmB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQd-ZO-Jmw">
+                                        <rect key="frame" x="0.0" y="180" width="160" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="1Ka-6p-hUX"/>
                                             <constraint firstAttribute="height" constant="40" id="nCr-J8-Akn"/>
@@ -52,19 +63,19 @@
                                             <action selector="showAlertActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SXw-Wg-KkD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yg-Z5-nm6">
-                                        <rect key="frame" x="0.0" y="180" width="160" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yg-Z5-nm6">
+                                        <rect key="frame" x="0.0" y="240" width="160" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Rpg-0d-fKl"/>
                                             <constraint firstAttribute="width" constant="160" id="csX-0e-z1N"/>
                                         </constraints>
-                                        <state key="normal" title="Custom View"/>
+                                        <state key="normal" title="Custom View "/>
                                         <connections>
                                             <action selector="showCustomViewActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0JG-2J-J5A"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHi-5D-xJ3">
-                                        <rect key="frame" x="0.0" y="240" width="160" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHi-5D-xJ3">
+                                        <rect key="frame" x="0.0" y="300" width="160" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="VVf-JS-vOA"/>
                                             <constraint firstAttribute="width" constant="160" id="YVL-sW-PL1"/>

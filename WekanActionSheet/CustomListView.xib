@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NibExampleView" customModule="WekanActionSheet" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomListView" customModule="WekanActionSheet" customModuleProvider="target">
             <connections>
                 <outlet property="listTableView" destination="qGU-aP-Pt0" id="JoX-0t-Mva"/>
             </connections>
@@ -17,11 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="417" height="440"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-aP-Pt0">
-                    <rect key="frame" x="0.0" y="0.0" width="417" height="400"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-aP-Pt0">
+                    <rect key="frame" x="0.0" y="50" width="417" height="350"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="400" id="Qgh-Ab-B0f"/>
+                        <constraint firstAttribute="height" constant="350" id="QTJ-Hj-SMM"/>
                     </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Qdl-fQ-Au6"/>
@@ -34,18 +34,35 @@
                         <constraint firstAttribute="height" constant="40" id="D18-WA-elE"/>
                         <constraint firstAttribute="width" constant="100" id="e7x-na-oRX"/>
                     </constraints>
-                    <state key="normal" title="Done"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="closeActionWithSender:" destination="-1" eventType="touchUpInside" id="kHF-NQ-HeH"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40s-ui-zkd">
+                    <rect key="frame" x="0.0" y="0.0" width="417" height="50"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="KNn-Lj-kVX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.21568627450980393" green="0.22745098039215686" blue="0.29803921568627451" alpha="0.90333369006849318" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="xeZ-xZ-Oj0" secondAttribute="bottom" id="5OU-8p-0FX"/>
+                <constraint firstItem="40s-ui-zkd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7qZ-ZP-vA2"/>
+                <constraint firstItem="qGU-aP-Pt0" firstAttribute="top" secondItem="40s-ui-zkd" secondAttribute="bottom" id="8v2-pb-CsJ"/>
                 <constraint firstItem="xeZ-xZ-Oj0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HMd-rf-Nez"/>
-                <constraint firstItem="qGU-aP-Pt0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WGX-hF-GxZ"/>
+                <constraint firstItem="40s-ui-zkd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ToW-M1-K4K"/>
                 <constraint firstItem="xeZ-xZ-Oj0" firstAttribute="top" secondItem="qGU-aP-Pt0" secondAttribute="bottom" id="WKh-Qu-E2r"/>
+                <constraint firstAttribute="trailing" secondItem="40s-ui-zkd" secondAttribute="trailing" id="WiD-pP-33Y"/>
+                <constraint firstItem="40s-ui-zkd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YHc-jc-rI7"/>
                 <constraint firstItem="qGU-aP-Pt0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pre-oo-8Rt"/>
                 <constraint firstAttribute="trailing" secondItem="qGU-aP-Pt0" secondAttribute="trailing" id="zn4-Kh-35Q"/>
             </constraints>
