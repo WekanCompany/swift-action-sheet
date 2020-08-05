@@ -4,6 +4,10 @@ A sample with different types of action sheets for iOS in Swift.
 We are using the popular library [SwiftEntryKit](https://github.com/huri000/SwiftEntryKit), as it already covers different types of sheets.
 
 
+![alt text](https://github.com/WekanCompany/swift-action-sheet/blob/master/gitPreview.gif)
+
+
+
 ## How to get it work ##
 
 #### 1. Install pod
